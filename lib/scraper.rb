@@ -8,7 +8,7 @@ class Scraper
     url = "https://www.visitphilly.com/articles/philadelphia/most-essential-things-to-do-in-philadelphia/"
     page = open(url)
     doc = Nokogirl::HTML(page)
+    binding.pry
   end
-
 
 end
