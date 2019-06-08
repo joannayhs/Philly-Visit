@@ -1,4 +1,4 @@
-require "philly/visit/version"
+require "version.rb"
 
 module Philly
   module Visit
