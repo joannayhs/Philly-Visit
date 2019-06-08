@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
-require "./lib/environment.rb"
+require_relative "../lib/environment.rb"
 
-CLI.new.call 
+app = Scraper.new
+Scraper.activity
+Scraper.scrape_info_page

@@ -4,5 +4,4 @@ source "https://rubygems.org"
 gemspec
 
 gem "nokogirl"
-gem "open-uri"
 gem "pry"
