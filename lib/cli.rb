@@ -21,11 +21,11 @@ class CLI
 
   def activity_list
     puts "Here is a list of the ten most essential things to do on your first visit to Philly:"
-    puts "Which activity would you like to know more about? (1-10)"
-    puts "When finished, type 'exit'"
-    puts "list of activities"
     number = nil
     while number != "exit"
+      puts "Which activity would you like to know more about? (1-10)"
+      puts "When finished, type 'exit'"
+      puts "list of activities"
       number = gets.strip
       case number
         when "1"
