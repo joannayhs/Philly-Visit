@@ -1,5 +1,6 @@
-require "version.rb"
-require_relative "../lib/scraper.rb"
+require_relative "version.rb"
+require_relative "scraper.rb"
+require_relative "cli.rb"
 
 module Philly
   module Visit
