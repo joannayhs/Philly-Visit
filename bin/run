@@ -2,6 +2,5 @@
 
 require_relative "../lib/environment.rb"
 
-app = Scraper.new
-Scraper.activity
-Scraper.scrape_info_page
+scraper = Scraper.new
+scraper.create_activity
