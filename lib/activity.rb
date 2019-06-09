@@ -1,14 +1,11 @@
 class Activity
-attr_accessor :title, :overview, :location_and_contact, :admission_info, :url
-@@all = []
+#a new activity should be initialized with all of its information
+#it has a title
+#it has an overview
+#it has a location
+#it has admission info
+#it has a url for more info
+#it keeps track of all the attractions
 
-def initialize(title = nil, overview = nil, location_and_contact = nil, admission_info = nil, url = nil)
-  @title, @overview, @location_and_contact, @admission_info, @url = title, overview, location_and_contact, admission_info, url
-  @@all << self
-end
-
-def self.all
-  @@all
-end
 
 end

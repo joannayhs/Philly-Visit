@@ -2,5 +2,4 @@
 
 require_relative "../lib/environment.rb"
 
-scraper = Scraper.new
-scraper.create_activity
+CLI.new.call

@@ -25,7 +25,7 @@ class CLI
     while number != "exit"
       puts "Which activity would you like to know more about? (1-10)"
       puts "When finished, type 'exit'"
-      puts "list of activities"
+      display_list
       number = gets.strip
       case number
         when "1"
@@ -54,6 +54,12 @@ class CLI
           puts "Please enter a number 1-10:"
         end
       end
+  end
+
+  def display_list
+    Scraper.activity.each_with_index do |activity, i|
+      puts "#{i+1}. #{activity}"
+    end
   end
 
   def goodbye
