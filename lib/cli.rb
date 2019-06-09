@@ -2,25 +2,15 @@ class CLI
 
   def call
     welcome
-    yes_or_no
+    activity_list
   end
 
   def welcome
     puts "Welcome to Philadelphia, the City of Brotherly Love!"
   end
 
-  def yes_or_no
-    puts "Is this your first time here? (Y/N)"
-    input = gets.strip.upcase
-    if input == "Y"
-      activity_list
-    elsif input == "N"
-      goodbye
-    end
-  end
-
   def activity_list
-    puts "Here is a list of the ten most essential things to do on your first visit to Philly:"
+    puts "Here is a list of the top ten attractions in Philly:"
     number = nil
     while number != "exit"
       puts "Which activity would you like to know more about? (1-10)"
