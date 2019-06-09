@@ -2,6 +2,7 @@ require "pry"
 require "open-uri"
 require "nokogiri"
 
+
 class Scraper
 
   BASE_URL = "https://www.tripadvisor.com/Attractions-g60795-Activities-Philadelphia_Pennsylvania.html"
@@ -18,14 +19,14 @@ class Scraper
     end
 
     def self.urls
-      list_items = Scraper.parse.css("div.attractions-attraction-overview-pois-PoiInfo__info--239IR>div div:nth-child(2) a.attractions-attraction-overview-pois-PoiInfo__name--SJ0a4").map{|attractions| attractions.attr('href')}
+      list_items = Scraper.parse.css("div.attractions-attraction-overview-pois-PoiInfo__info--239IR>div div:nth-child(2) a.attractions-attraction-overview-pois-PoiInfo__name--SJ0a4").map{|attractions| "https://www.tripadvisor.com/#{attractions.attr('href')}"}
       #creates an array of attraction urls to parse
     end
 
     def self.parse_attraction_pages #scrapes the second level. pulls the information about each activity.
-      attractions = {}
       Scraper.urls.each do |url|
         doc = Nokogiri::HTML(open(url)) #want to create a new activity from these urls
+        Attraction.create_from_index(doc)
         binding.pry
       end
     end
@@ -33,4 +34,4 @@ class Scraper
 end
 
 
-Scraper.urls
+Scraper.parse_attraction_pages
