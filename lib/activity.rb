@@ -8,4 +8,5 @@ class Activity
 #it keeps track of all the attractions
 
 
+
 end
