@@ -1,3 +1,5 @@
+require_relative "./scraper.rb"
+
 class Attraction
 #a new activity should be initialized with all of its information
 #it has a title
@@ -14,13 +16,12 @@ def initialize(title =nil, about = nil, location = nil, hours = nil, url = nil)
   @@all << self
 end
 
-def create_from_index(url)
-  Attraction.new(
-    url.css("h1.ui_header h1").text, #title
-    url.css("div.attractions-attraction-detail-about-card-Description__modalText--1oJCY").text, #about
-    url.css("div.detail_section address span.street-addess + span.locality").text, #location
-    url.css("span.ui_column is-4 attractions-attraction-detail-about-card-OpenHours__dayRange--3hPdS + span.ui_column is-8 attractions-attraction-detail-about-card-OpenHours__timeRange--3p3_Z").text,
-  )
+def create_from_index(hash)
+  hash.each do |key, value|
+    self.send(":#{key}=", "#{value}")
+  end
 end
 
 end
+
+Attraction.create_from_index(Scraper.parse_attraction_pages)
