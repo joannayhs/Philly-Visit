@@ -18,36 +18,16 @@ class CLI
       display_list
       number = gets.strip
       case number
-        when "1"
-          puts "first activity"
-        when "2"
-          puts "second activity"
-        when "3"
-          puts "third activity"
-        when "4"
-          puts "fourth activity"
-        when "5"
-          puts "fifth activity"
-        when "6"
-          puts "sixth activity"
-        when "7"
-          puts "seventh activity"
-        when "8"
-          puts "eighth activity"
-        when "9"
-          puts "ninth activity"
-        when "10"
-          puts "tenth activity"
         when "exit"
           goodbye
         else
-          puts "Please enter a number 1-10:"
+          puts "Please enter a number 1-30:"
         end
       end
   end
 
   def display_list
-    Scraper.activity.each_with_index do |activity, i|
+    Scraper.attractions.each_with_index do |activity, i|
       puts "#{i+1}. #{activity}"
     end
   end
